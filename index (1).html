@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Découvrez les paysages, la culture et les lieux touristiques du Sénégal.">
+  <title>Découverte du Sénégal</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #102b46;
+      --blue: #0879df;
+      --green: #16834f;
+      --gold: #d99a16;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Nunito Sans", Arial, sans-serif; color: #243342; }
+    .navbar { background: var(--navy); }
+    .navbar-brand { font-weight: 900; letter-spacing: .2px; }
+    .navbar .nav-link { color: #fff; font-weight: 700; padding: .65rem 1rem !important; border-radius: .45rem; }
+    .navbar .nav-link:hover, .navbar .nav-link.active { background: var(--blue); color: #fff; }
+    .hero {
+      min-height: 390px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(8,35,60,.78), rgba(8,35,60,.15)),
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=85") center 48%/cover;
+    }
+    .hero-panel { max-width: 690px; background: rgba(12,45,73,.76); border-radius: 10px; color: white; padding: 2rem; }
+    .hero h1 { font-size: clamp(2.25rem, 5vw, 3.6rem); font-weight: 900; line-height: 1.08; }
+    .hero p { font-size: 1.15rem; }
+    .btn-primary { background: var(--blue); border-color: var(--blue); }
+    .place-card { height: 100%; border: 0; border-radius: 9px; overflow: hidden; transition: transform .2s, box-shadow .2s; }
+    .place-card:hover { transform: translateY(-5px); box-shadow: 0 12px 28px rgba(20,50,70,.14); }
+    .place-card img { height: 205px; object-fit: cover; }
+    .place-card .card-body { padding: 1.2rem; }
+    .place-card h3 { font-size: 1.35rem; font-weight: 900; }
+    .card-dakar { background: #e4f7ed; }
+    .card-lac { background: #e4f1ff; }
+    .card-casamance { background: #fff4d8; }
+    .feature-section { background: #eef4f9; }
+    .feature-icon { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; font-size: 1.65rem; margin: 0 auto .6rem; }
+    .footer { background: var(--navy); color: #fff; }
+    .social a { color: white; text-decoration: none; font-size: 1.25rem; margin-left: 1rem; }
+    section { scroll-margin-top: 76px; }
+    @media (max-width: 767px) {
+      .hero { min-height: 420px; padding: 2rem 0; }
+      .hero-panel { padding: 1.4rem; }
+      .place-card img { height: 220px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barre de navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fs-4" href="#accueil">📍 Sénégal</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+              aria-controls="menu" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link active" href="#accueil">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#decouvrir">Découvrir</a></li>
+          <li class="nav-item"><a class="nav-link" href="#lieux">Lieux touristiques</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galerie">Galerie</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Bannière principale -->
+  <header class="hero" id="accueil">
+    <div class="container">
+      <div class="hero-panel">
+        <h1>Découverte du Sénégal</h1>
+        <p class="mt-3 mb-4">Un pays riche en culture, en paysages et en hospitalité.</p>
+        <a class="btn btn-primary btn-lg fw-bold" href="#lieux">Explorer maintenant</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Introduction -->
+  <section class="py-5" id="decouvrir">
+    <div class="container text-center">
+      <span class="text-primary fw-bold text-uppercase small">Teranga – Bienvenue</span>
+      <h2 class="fw-black fw-bold mt-2">Bienvenue au Sénégal</h2>
+      <p class="text-secondary mx-auto mb-0" style="max-width: 780px">
+        De l'océan Atlantique aux forêts du sud, le Sénégal invite à découvrir des sites naturels,
+        un patrimoine historique vivant et une culture reconnue pour son hospitalité.
+      </p>
+    </div>
+  </section>
+
+  <!-- Lieux touristiques -->
+  <section class="pb-5" id="lieux">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <article class="card place-card card-dakar">
+            <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=900&q=85"
+                 class="card-img-top" alt="Vue urbaine et littoral de Dakar">
+            <div class="card-body">
+              <h3 class="text-success">Dakar</h3>
+              <p>La capitale du Sénégal, dynamique et moderne, offre un mélange unique de tradition et de modernité.</p>
+              <a class="btn btn-success fw-bold" href="#contact">En savoir plus</a>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <article class="card place-card card-lac">
+            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=85"
+                 class="card-img-top" alt="Paysage d'eau et de pirogues">
+            <div class="card-body">
+              <h3 class="text-primary">Le Lac Rose</h3>
+              <p>Célèbre pour ses eaux aux reflets rosés, le Lac Rose est un site naturel emblématique du Sénégal.</p>
+              <a class="btn btn-primary fw-bold" href="#contact">En savoir plus</a>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <article class="card place-card card-casamance">
+            <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=900&q=85"
+                 class="card-img-top" alt="Paysage naturel et arbres">
+            <div class="card-body">
+              <h3 style="color:#80540b">La Casamance</h3>
+              <p>Une région verdoyante connue pour ses paysages, ses traditions et son accueil chaleureux.</p>
+              <a class="btn fw-bold text-white" style="background:#c68a0b" href="#contact">En savoir plus</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section class="py-5 feature-section" id="galerie">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold">Pourquoi découvrir le Sénégal ?</h2>
+        <p class="text-secondary mb-0">Une destination aux multiples richesses.</p>
+      </div>
+      <div class="row g-4 text-center">
+        <div class="col-md-4">
+          <div class="feature-icon bg-primary-subtle">📷</div>
+          <h3 class="h5 fw-bold">Des paysages uniques</h3>
+          <p class="text-secondary mb-0">Plages, lacs, forêts et savanes à couper le souffle.</p>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-icon bg-success-subtle">👥</div>
+          <h3 class="h5 fw-bold">Une culture riche</h3>
+          <p class="text-secondary mb-0">Traditions, musique, gastronomie et artisanat.</p>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-icon bg-warning-subtle">🍃</div>
+          <h3 class="h5 fw-bold">Un tourisme durable</h3>
+          <p class="text-secondary mb-0">Découvrir et préserver les richesses du Sénégal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="py-5" id="contact">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="fw-bold">Préparez votre découverte</h2>
+          <p class="text-secondary">Une question ou une suggestion de lieu à visiter ? Écrivez-nous.</p>
+          <form class="row g-3 text-start" onsubmit="event.preventDefault(); alert('Merci ! Votre message de démonstration a bien été saisi.');">
+            <div class="col-md-6">
+              <label for="nom" class="form-label">Votre nom</label>
+              <input id="nom" class="form-control" type="text" placeholder="Nom et prénom" required>
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label">Votre adresse e-mail</label>
+              <input id="email" class="form-control" type="email" placeholder="exemple@email.com" required>
+            </div>
+            <div class="col-12">
+              <label for="message" class="form-label">Votre message</label>
+              <textarea id="message" class="form-control" rows="4" placeholder="Votre message..." required></textarea>
+            </div>
+            <div class="col-12 text-center">
+              <button class="btn btn-primary px-4 fw-bold" type="submit">Envoyer le message</button>
+            </div>
+          </form>
+          <p class="small text-secondary mt-3">Formulaire de démonstration : aucun message n'est envoyé à un serveur.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pied de page -->
+  <footer class="footer py-3">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <span class="small">© 2026 Découverte du Sénégal. Tous droits réservés.</span>
+      <div class="social">
+        <a href="#contact" aria-label="Facebook">f</a>
+        <a href="#contact" aria-label="Instagram">◎</a>
+        <a href="#contact" aria-label="YouTube">▶</a>
+        <a href="#contact" aria-label="X">𝕏</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
